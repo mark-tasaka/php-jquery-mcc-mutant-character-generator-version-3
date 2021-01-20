@@ -12,8 +12,9 @@ body{
 /* id rules
 --------------------*/
 #character_sheet{
+    position:absolute;
     width: 950px;
-    height: auto;
+    height: 2496px;
 	display: block;
 }
 
@@ -364,13 +365,14 @@ body{
     top: 510px;
     left: 665px;
     font-size: 1.2em;
+    color: blue;
 }
 
-#artifactCheckBonusDie
+#mutantHorrorBonus
 {
     position:absolute;
-    top: 510px;
-    left: 820px;
+    top: 495px;
+    left: 815px;
     font-size: 1.2em;
 }
 
@@ -393,7 +395,8 @@ body{
     top: 395px;
     left: 710px;
     font-size: 1.1em;
-    color: white;
+    color: red;
+   /* color: white;*/
 }
 
 #actionDice{

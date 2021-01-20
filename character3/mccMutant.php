@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Mutant Crawl Classics Sentinel Character Generator Version 3</title>
+<title>Mutant Crawl Classics Mutant Character Generator Version 3</title>
  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
 	<meta charset="UTF-8">
-	<meta name="description" content="Mutant Crawl Classics sentinel Character Generator. Goblinoid Games.">
+	<meta name="description" content="Mutant Crawl Classics mutant Character Generator. Goblinoid Games.">
 	<meta name="keywords" content="Mutant Crawl Classics, Goblinoid Games,HTML5,CSS,JavaScript">
-	<meta name="author" content="Mark Tasaka 2020">
+	<meta name="author" content="Mark Tasaka 2021">
     
     <link rel="icon" href="../../../images/favicon/favicon.png" type="image/png" sizes="16x16"> 
 		
 
-	<link rel="stylesheet" type="text/css" href="css/sentinel.css">
+	<link rel="stylesheet" type="text/css" href="css/mutant.css">
     
     
     <script type="text/javascript" src="./js/modifiers.js"></script>
@@ -337,7 +337,7 @@
 
     $artifactCheckBonusPlusInt = $artifactCheckBonus + $intelligenceMod;
 
-    $artifactCheckBonusDie = getArtifactCheckBonusDie($level);
+    $mutantHorrorBonus = getMutantHorrorBonus($level);
 
 
     $profession = getProfession();
@@ -401,9 +401,9 @@
        </span>
 
        
-       <span id="artifactCheckBonusDie">
+       <span id="mutantHorrorBonus">
            <?php
-                echo $artifactCheckBonusDie;
+                echo $mutantHorrorBonus;
            ?>
         </span>
 
@@ -411,7 +411,7 @@
         <span id="maxTech"></span>
 
        
-       <span id="class">Sentinel</span>
+       <span id="class">Mutant</span>
        
        <span id="armourClass"></span>
 
@@ -681,7 +681,7 @@
 
 	  
 	/*
-	 Character() - sentinel Character Constructor
+	 Character() - mutant Character Constructor
 	*/
 	function Character() {
         
@@ -705,7 +705,7 @@
         let bonusLanguages = fnAddLanguages(intelligenceMod, birthAugur, luckMod);
 	    let baseAC = getBaseArmourClass(agilityMod) + adjustAC(birthAugur, luckMod);
 
-		let sentinelCharacter = {
+		let mutantCharacter = {
 			"strength": strength,
 			"agility": agility,
 			"stamina": stamina,
@@ -736,17 +736,17 @@
             "initiative": agilityMod + adjustInit(birthAugur, luckMod)
 
 		};
-	    if(sentinelCharacter.hitPoints <= 0 ){
-			sentinelCharacter.hitPoints = 1;
+	    if(mutantCharacter.hitPoints <= 0 ){
+			mutantCharacter.hitPoints = 1;
 		}
-		return sentinelCharacter;
+		return mutantCharacter;
 	  
 	  }
 	  
 
 
   
-       let imgData = "images/sentinel.png";
+       let imgData = "images/mutant.png";
       
         $("#character_sheet").attr("src", imgData);
       
