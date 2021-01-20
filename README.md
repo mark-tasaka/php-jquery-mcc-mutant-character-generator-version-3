@@ -4,6 +4,12 @@ Designed with PHP and jQuery, the Mutant Crawl Classics Mutant Character Generat
 
 --------------------------
 
+
+
+Update: 2021-01-20
+
+Updates to mccMutant.php, mutant.css, mutant.png, hitPoints.js and classDetails.php.
+
 Initial commit: 2021-01-19
 
 The initial commit of the Mutant Crawl Classics Mutant Character Generator Version 3.
