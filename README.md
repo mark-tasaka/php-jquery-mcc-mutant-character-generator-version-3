@@ -5,8 +5,11 @@ Designed with PHP and jQuery, the Mutant Crawl Classics Mutant Character Generat
 --------------------------
 
 
+Update 1.02: 2021-01-21
 
-Update: 2021-01-20
+Updates to mccMutant.php, mutant.css and classDetails.php.  A new file, zeroLevelMutantAppearance.php, added.
+
+Update 1.01: 2021-01-20
 
 Updates to mccMutant.php, mutant.css, mutant.png, hitPoints.js and classDetails.php.
 
