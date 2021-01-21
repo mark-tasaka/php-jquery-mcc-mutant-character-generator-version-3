@@ -201,39 +201,39 @@ function getArtifactCheckBonus($level)
           break;
           
         case 2:
-            $bonus = 1;
+            $bonus = 0;
           break;
           
         case 3:
-            $bonus = 2;
+            $bonus = 1;
           break;
 
         case 4:
-            $bonus = 3;
+            $bonus = 1;
           break;
           
         case 5:
-            $bonus = 4;
+            $bonus = 2;
           break;
           
         case 6:
-            $bonus = 5;
+            $bonus = 3;
           break;
 
           case 7:
-            $bonus = 6;
+            $bonus = 4;
           break;
           
         case 8:
-            $bonus = 7;
+            $bonus = 5;
           break;
           
         case 9:
-            $bonus = 8;
+            $bonus = 6;
           break;
           
         case 10:
-            $bonus = 9;
+            $bonus = 7;
           break;
           
         default:
@@ -299,9 +299,13 @@ function getMutantHorrorPart2($level)
   {
     $part2 = 6;
   }
-  else
+  else if($level == 10)
   {
     $part2 = 7;
+  }
+  else
+  {
+    $part2 = 0;
   }
 
   return $part2;

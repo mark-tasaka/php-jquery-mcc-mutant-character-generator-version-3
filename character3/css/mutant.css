@@ -360,18 +360,34 @@ body{
 }
 
 
+#initiative{
+    position:absolute;
+    top: 500px;
+    left: 660px;
+    font-size: 1em;
+}
+
 #artifactCheck{
     position:absolute;
-    top: 510px;
-    left: 665px;
-    font-size: 1.2em;
-    color: blue;
+    top: 395px;
+    left: 710px;
+    font-size: 1.1em;
+    color: white;
 }
+
+#zeroLvMutantAppearance{
+    position:absolute;
+    top: 890px;
+    left: 50px;
+    font-size: 0.8em;
+    width: 260px;
+}
+
 
 #mutantHorrorBonus
 {
     position:absolute;
-    top: 495px;
+    top: 500px;
     left: 815px;
     font-size: 1.2em;
 }
@@ -390,14 +406,6 @@ body{
     font-size: 0.9em;
 }
 
-#initiative{
-    position:absolute;
-    top: 395px;
-    left: 710px;
-    font-size: 1.1em;
-    color: red;
-   /* color: white;*/
-}
 
 #actionDice{
     position:absolute;

@@ -42,6 +42,7 @@
     include 'php/xp.php';
     include 'php/artifacts.php';
     include 'php/profession.php';
+    include 'php/zeroLevelMutantAppearance.php';
     
 
         if(isset($_POST["theCharacterName"]))
@@ -339,8 +340,13 @@
 
     $mutantHorrorBonus = getMutantHorrorBonus($level);
 
+    $mutantHorrorPart1 = getMutantHorrorPart1($level);
+    $mutantHorrorPart2 = getMutantHorrorPart2($level);
+
 
     $profession = getProfession();
+
+    $zeroLvMutantAppearance = getMutantAppearance();
 
     
     
@@ -387,15 +393,15 @@
            <?php
                 if($artifactCheckBonusPlusInt == 0)
                 {
-                    echo 'd20';
+                    echo '+' . $artifactCheckBonusPlusInt;
                 }
                 else if($artifactCheckBonusPlusInt < 0)
                 {
-                    echo 'd20-1';
+                    echo $artifactCheckBonusPlusInt;
                 }
                 else
                 {
-                    echo 'd20+' . $artifactCheckBonusPlusInt;
+                    echo '+' . $artifactCheckBonusPlusInt;
                 }
            ?>
        </span>
@@ -666,10 +672,15 @@
 
        <span id="profession">
             <?php
-           echo $profession;;
+           echo $profession;
            ?>
        </span>
-       
+
+       <span id="zeroLvMutantAppearance">
+            <?php
+           echo $zeroLvMutantAppearance;
+           ?>
+       </span>
 
        
 	</section>
@@ -704,6 +715,9 @@
         let maxTechLevel = getMaxTechLevel(intelligence);
         let bonusLanguages = fnAddLanguages(intelligenceMod, birthAugur, luckMod);
 	    let baseAC = getBaseArmourClass(agilityMod) + adjustAC(birthAugur, luckMod);
+        let mutantHorrorInitPart2 =  <?php echo $mutantHorrorPart2 ?>;
+        let initBase = mutantHorrorInitPart2 + agilityMod + adjustInit(birthAugur, luckMod);
+        let mutantInitBonus2 = addModifierSign(initBase);
 
 		let mutantCharacter = {
 			"strength": strength,
@@ -733,7 +747,7 @@
             "reflex": <?php echo $reflexBase ?> + agilityMod + adjustRef(birthAugur, luckMod),
             "fort": <?php echo $fortBase ?> + staminaMod + adjustFort(birthAugur,luckMod),
             "will": <?php echo $willBase ?> + personalityMod + adjustWill(birthAugur, luckMod),
-            "initiative": agilityMod + adjustInit(birthAugur, luckMod)
+            "initiative": '<?php echo 'd20+' . $mutantHorrorPart1 ?>' + mutantInitBonus2
 
 		};
 	    if(mutantCharacter.hitPoints <= 0 ){
@@ -790,7 +804,7 @@
       $("#fort").html(addModifierSign(data.fort));
       $("#will").html(addModifierSign(data.will));
       
-      $("#initiative").html(addModifierSign(data.initiative));
+      $("#initiative").html(data.initiative);
       
       $("#speed").html(data.move + "'");
       
