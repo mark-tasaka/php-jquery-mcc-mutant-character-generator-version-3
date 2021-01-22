@@ -178,6 +178,45 @@
 
             $optimizeAbilityScoreMessage = "Ability Scores optimized in the order of Str, Sta, Agi, Luck, Per, Int.";
         }
+        else if($_POST['theOptimizeAbilityScore'] == 2)
+        {
+            rsort($abilityScoreArray);
+
+            $strengthBase = $abilityScoreArray[3];
+            $agility = $abilityScoreArray[2];
+            $stamina = $abilityScoreArray[1];
+            $personality = $abilityScoreArray[5];
+            $intelligence = $abilityScoreArray[4];
+            $luck = $abilityScoreArray[0];
+
+            $optimizeAbilityScoreMessage = "Ability Scores optimized in the order of Luck, Sta, Agi, Str, Int, Per.";
+        }
+        else if($_POST['theOptimizeAbilityScore'] == 3)
+        {
+            rsort($abilityScoreArray);
+
+            $strengthBase = $abilityScoreArray[4];
+            $agility = $abilityScoreArray[0];
+            $stamina = $abilityScoreArray[1];
+            $personality = $abilityScoreArray[3];
+            $intelligence = $abilityScoreArray[5];
+            $luck = $abilityScoreArray[2];
+
+            $optimizeAbilityScoreMessage = "Ability Scores optimized in the order of Agi, Sta, Luck, Per, Str, Int.";
+        }
+        else if($_POST['theOptimizeAbilityScore'] == 4)
+        {
+            rsort($abilityScoreArray);
+
+            $strengthBase = $abilityScoreArray[5];
+            $agility = $abilityScoreArray[4];
+            $stamina = $abilityScoreArray[3];
+            $personality = $abilityScoreArray[2];
+            $intelligence = $abilityScoreArray[1];
+            $luck = $abilityScoreArray[0];
+
+            $optimizeAbilityScoreMessage = "Ability Scores optimized in the order of Luck, Int, Per, Sta, Agi, Str.";
+        }
         else
         {
             $strengthBase = $abilityScoreArray[0];
@@ -188,7 +227,34 @@
             $luck = $abilityScoreArray[5];
             
             $optimizeAbilityScoreMessage = "";
-        } 
+        }
+
+        /*
+
+        if(isset($_POST['theOptimizeAbilityScore']) && $_POST['theOptimizeAbilityScore'] == 1) 
+        {
+            rsort($abilityScoreArray);
+
+            $strengthBase = $abilityScoreArray[0];
+            $agility = $abilityScoreArray[2];
+            $stamina = $abilityScoreArray[1];
+            $personality = $abilityScoreArray[4];
+            $intelligence = $abilityScoreArray[5];
+            $luck = $abilityScoreArray[3];
+
+            $optimizeAbilityScoreMessage = "Ability Scores optimized in the order of Str, Sta, Agi, Luck, Per, Int.";
+        }
+        else
+        {
+            $strengthBase = $abilityScoreArray[0];
+            $agility = $abilityScoreArray[1];
+            $stamina = $abilityScoreArray[2];
+            $personality = $abilityScoreArray[3];
+            $intelligence = $abilityScoreArray[4];
+            $luck = $abilityScoreArray[5];
+            
+            $optimizeAbilityScoreMessage = "";
+        } */
 
         $strength = $strengthBonusFromArtifact + $strengthBase;
 
