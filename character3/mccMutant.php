@@ -43,6 +43,7 @@
     include 'php/artifacts.php';
     include 'php/profession.php';
     include 'php/zeroLevelMutantAppearance.php';
+    include 'php/physicalMutations.php';
     
 
         if(isset($_POST["theCharacterName"]))
@@ -165,6 +166,31 @@
 
         }
 
+
+        $physicalMutationArray = array();
+
+        for($m = 0; $m < 26; ++$m)
+        {
+            array_push($physicalMutationArray, $m);
+        }
+
+        shuffle($physicalMutationArray);
+
+        if(isset($_POST["thePhysicalMutuation"]))
+        {
+            $physicalMutationString = $_POST["thePhysicalMutuation"];
+            //casting not necessary with php
+            $physicalMutationTotal = (int)$physicalMutationString;
+        }
+
+        if(isset($_POST['theRandomMutuations']) && $_POST['theRandomMutuations'] == 1) 
+        {
+            $dieRollPhysicalMutations = rand(1, 3);
+            $physicalMutationTotal = $dieRollPhysicalMutations;
+        } 
+
+
+
         if(isset($_POST['theOptimizeAbilityScore']) && $_POST['theOptimizeAbilityScore'] == 1) 
         {
             rsort($abilityScoreArray);
@@ -229,32 +255,7 @@
             $optimizeAbilityScoreMessage = "";
         }
 
-        /*
 
-        if(isset($_POST['theOptimizeAbilityScore']) && $_POST['theOptimizeAbilityScore'] == 1) 
-        {
-            rsort($abilityScoreArray);
-
-            $strengthBase = $abilityScoreArray[0];
-            $agility = $abilityScoreArray[2];
-            $stamina = $abilityScoreArray[1];
-            $personality = $abilityScoreArray[4];
-            $intelligence = $abilityScoreArray[5];
-            $luck = $abilityScoreArray[3];
-
-            $optimizeAbilityScoreMessage = "Ability Scores optimized in the order of Str, Sta, Agi, Luck, Per, Int.";
-        }
-        else
-        {
-            $strengthBase = $abilityScoreArray[0];
-            $agility = $abilityScoreArray[1];
-            $stamina = $abilityScoreArray[2];
-            $personality = $abilityScoreArray[3];
-            $intelligence = $abilityScoreArray[4];
-            $luck = $abilityScoreArray[5];
-            
-            $optimizeAbilityScoreMessage = "";
-        } */
 
         $strength = $strengthBonusFromArtifact + $strengthBase;
 
