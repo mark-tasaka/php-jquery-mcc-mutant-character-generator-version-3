@@ -179,7 +179,7 @@
         if(isset($_POST["thePhysicalMutuation"]))
         {
             $physicalMutationString = $_POST["thePhysicalMutuation"];
-            //casting not necessary with php
+            //casting not necessary with php (it's good practice)
             $physicalMutationTotal = (int)$physicalMutationString;
         }
 
@@ -188,6 +188,22 @@
             $dieRollPhysicalMutations = rand(1, 3);
             $physicalMutationTotal = $dieRollPhysicalMutations;
         } 
+
+        $characterPhysicalMutations = array();
+
+
+        for($k = 0; $k < $physicalMutationTotal; ++$k)
+        {
+            $mutationNumber = $physicalMutationArray[$k];
+
+            $mutationName = getPhysicalMutationName($mutationNumber);
+            $mutationType = getPhyicalMutationType($mutationNumber);
+            $mutationManifest = getPhysicalMutationManifestation($mutationNumber);
+
+            $mutation = 'Mutation: ' . $mutationName . ' (' . $mutationType . ')<br/>Manifestation: <br/>' . $mutationManifest;
+
+            array_push($characterPhysicalMutations, $mutation);
+        }
 
 
 
@@ -677,7 +693,18 @@
         <span id="meleeDamage"></span>
         <span id="rangeDamage"></span>
 
-       
+        <span id="characterPhysicalMutations">
+        <?php
+           
+           foreach($characterPhysicalMutations as $thePMutations)
+           {
+               echo $thePMutations;
+               echo "<br/><br/>";
+           }
+           
+           ?>  
+        </span>
+        
        
        <span id="weaponsList">
            <?php

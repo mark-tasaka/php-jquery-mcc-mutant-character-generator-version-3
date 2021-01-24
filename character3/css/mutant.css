@@ -601,3 +601,12 @@ body{
     width: 330px;
 	font-size: 0.5em;
 }
+
+#characterPhysicalMutations
+{
+    position: absolute;
+    top: 1350px;
+    left: 120px;
+    width: 330px;
+	font-size: 0.6em;
+}
