@@ -299,4 +299,83 @@ function getStrengthModifier($strength)
 }
 
 
+function getMutantAbilityScoreModifier($abilityScore)
+{
+    
+    if($abilityScore == 3)
+    {
+        return -3;
+    }
+    if($abilityScore >=4 && $abilityScore <=5){
+        return -2;
+    }
+    else if($abilityScore >=6 && $abilityScore <=8){
+        return -1;
+    }
+    else if($abilityScore >=9 && $abilityScore <=12){
+        return 0;
+    }
+    else if($abilityScore >=13 && $abilityScore <=15){
+        return 1;
+    }	
+    else if($abilityScore >=16 && $abilityScore <=17){
+        return 2;
+    }	
+    else if($abilityScore >=18 && $abilityScore <=19){
+        return 3;
+    }	
+    else if($abilityScore >=20 && $abilityScore <=21){
+        return 4;
+    }	
+    else if($abilityScore >=22 && $abilityScore <=23){
+        return 5;
+    }		
+    else if($abilityScore >=24 && $abilityScore <=25){
+        return 6;
+    }		
+    else if($abilityScore >=26 && $abilityScore <=27){
+        return 7;
+    }		
+    else if($abilityScore >=28 && $abilityScore <=29){
+        return 8;
+    }		
+    else if($abilityScore >=30 && $abilityScore <=31){
+        return 9;
+    }		
+    else if($abilityScore >=32 && $abilityScore <=33){
+        return 10;
+    }		
+    else if($abilityScore >=34 && $abilityScore <=35){
+        return 11;
+    }			
+    else if($abilityScore >=36 && $abilityScore <=37){
+        return 12;
+    }			
+    else if($abilityScore >=38 && $abilityScore <=39){
+        return 13;
+    }		
+    else if($abilityScore >=40 && $abilityScore <=41){
+        return 14;
+    }			
+    else if($abilityScore >=42 && $abilityScore <=43){
+        return 15;
+    }			
+    else if($abilityScore >=44 && $abilityScore <=45){
+        return 16;
+    }			
+    else if($abilityScore >=46 && $abilityScore <=47){
+        return 17;
+    }			
+    else if($abilityScore >=48 && $abilityScore <=49){
+        return 18;
+    }										
+    else if($abilityScore >=50){
+        return 19;
+    }
+    else{ 
+      return -3;
+    }
+}
+
+
 ?>

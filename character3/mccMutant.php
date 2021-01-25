@@ -44,6 +44,7 @@
     include 'php/profession.php';
     include 'php/zeroLevelMutantAppearance.php';
     include 'php/physicalMutations.php';
+    include 'php/mentalMutations.php';
     
 
         if(isset($_POST["theCharacterName"]))
@@ -191,6 +192,27 @@
 
         $characterPhysicalMutations = array();
 
+        //Mutation/Defect Adjustments
+        //0-4
+        $mutantStrAdj = 0;
+        $mutantAgiAdj = 0;
+        $mutantStaAdj = 0;
+        $mutantPerAdj = 0;
+        $mutantIntAdj = 0;
+        //5 - 7
+        $mutantACAdj = 0;
+        $mutantInitAdj = 0;
+        $mutantActionDieAdj = 0;
+        //8-9
+        $mutantMeleeAdj = 0;
+        $mutantMissileAdj = 0;
+        //10-12
+        $mutantRefAdj = 0;
+        $mutantFortAdj = 0;
+        $mutantWillAdj = 0;
+        //13
+        $mutantSpeedAdj = 0;
+
 
         for($k = 0; $k < $physicalMutationTotal; ++$k)
         {
@@ -200,7 +222,19 @@
             $mutationType = getPhyicalMutationType($mutationNumber);
             $mutationManifest = getPhysicalMutationManifestation($mutationNumber);
 
-            $mutation = 'Mutation: ' . $mutationName . ' (' . $mutationType . ')<br/>Manifestation: <br/>' . $mutationManifest;
+            if($mutationNumber <= 10)
+            {
+                $mutationEffect = "A mutation check roll each time the active mutation is used.";
+            }
+            else
+            {
+                $dieRoll = rand(0, 5);
+
+                $mutationEffect = getPhyicalMutationEffect($mutationNumber, $dieRoll);
+
+            }
+
+            $mutation = 'Mutation: ' . $mutationName . ' (' . $mutationType . ')<br/><br/>Manifestation: ' . $mutationManifest  . '<br/><br/>Effect: ' . $mutationEffect;
 
             array_push($characterPhysicalMutations, $mutation);
         }
@@ -276,11 +310,11 @@
         $strength = $strengthBonusFromArtifact + $strengthBase;
 
         $strengthMod = getStrengthModifier($strength);
-        $agilityMod = getAbilityModifier($agility);
-        $staminaMod = getAbilityModifier($stamina);
-        $personalityMod = getAbilityModifier($personality);
-        $intelligenceMod = getAbilityModifier($intelligence);
-        $luckMod = getAbilityModifier($luck);
+        $agilityMod = getMutantAbilityScoreModifier($agility);
+        $staminaMod = getMutantAbilityScoreModifier($stamina);
+        $personalityMod = getMutantAbilityScoreModifier($personality);
+        $intelligenceMod = getMutantAbilityScoreModifier($intelligence);
+        $luckMod = getMutantAbilityScoreModifier($luck);
     
         $generationMessage = generationMesssage ($abilityScoreGen);
     
@@ -699,7 +733,7 @@
            foreach($characterPhysicalMutations as $thePMutations)
            {
                echo $thePMutations;
-               echo "<br/><br/>";
+               echo "<br/>----------------------------------------------------------<br/>";
            }
            
            ?>  

@@ -173,78 +173,130 @@ function getPhysicalMutationManifestation($input)
 }
 
 
-   /*           
+    
 function physicalMutationActiveEffect($input)
 {
     $a00 = array("Failure, mutation results in cosmetic change only; non-protective skin change.",
                 "The mutant’s natural AC increases by +2",
+                "The mutant’s natural AC increases by +2",
                 "The mutant’s natural AC increases by +3, +1 to Fortitude saves.",
-                ".",
-                ".",
-                ".");
+                "The mutant’s natural AC increases by +4, +2 to Fortitude saves, speed reduced by 5’.",
+                "The mutant’s natural AC increases by +5, +3 to Fortitude saves, speed reduced by 10’.");
 
-    $a01 = array(".",
-                ".",
-                ".",
-                ".",
-                ".",
-                ".");
+    $a01 = array("Failure, mutation results in cosmetic change only; non-damaging claws.",
+                "The mutant’s claws cause 1d3 damage per strike.",
+                "The mutant’s claws cause 1d5 damage per strike.",
+                "The mutant’s claws cause 1d7 damage per strike.",
+                "The mutant’s claws cause 1d14 damage per strike.",
+                "The mutant’s claws cause 1d16 damage per strike.");
 
-    $a02 = array(".",
-                ".",
-                ".",
-                ".",
-                ".",
-                ".");
+    $a02 = array("Failure, mutation results in a cosmetic change only: hyperactive speech.",
+                "The mutant’s Agility score is increased by +1.",
+                "The mutant’s Agility score is increased by +2.",
+                "The mutant’s Agility score is increased by +3.",
+                "The mutant’s Agility score increases by +4;  base speed is increased to 35’.",
+                "The mutant’s Agility score increases by +6; AC is increased by +9 (ignore normal Agility modifier for AC); base speed is increased to 40’.");
 
-    $a03 = array(".",
-                ".",
-                ".",
-                ".",
-                ".",
-                ".");
+    $a03 = array("Failure, mutation results in a cosmetic change only: mutant’s skin does not appear to show external damage or trauma.",
+                "The mutant’s Stamina score is increased by +1.",
+                "The mutant’s Stamina score is increased by +2.",
+                "The mutant’s Stamina score is increased by +3.",
+                "The mutant’s Stamina score increases by +4; mutant is not vulnerable to electrical attacks.",
+                "The mutant’s Stamina score increases by +6; mutant is immune to heat attacks.");
 
-    $a04 = array(".",
-                ".",
-                ".",
-                ".",
-                ".",
-                ".");
+    $a04 = array("Failure, mutation results in a cosmetic change only: mutant appears well-muscled.",
+                "The mutant’s Strength score is increased by +1.",
+                "The mutant’s Strength score is increased by +2.",
+                "The mutant’s Strength score is increased by +3.",
+                "The mutant’s Strength score increases by +4;  mutant’s speed is reduced by 5’.",
+                "The mutant’s Strength score increases by +6; mutant’s speed is reduced by 10’.");
                 
-    $a05 = array(".",
-                ".",
-                ".",
-                ".",
-                ".",
-                ".");
+    $a05 = array("Failure, mutation results in a cosmetic change only: mutant is twitchy; constantly moving; rarely resting.",
+                "The mutant’s movement speed is increased by +5’.",
+                "The mutant’s movement speed is increased by +10’.",
+                "The mutant’s movement speed is increased by +15’; gains additional d14 action die.",
+                "The mutant’s movement speed is increased by +20’;  gains additional d16 action die.",
+                "The mutant’s movement speed is increased by +25’;  gains additional d20 action die.");
 
-    $a06 = array(".",
-                ".",
-                ".",
-                ".",
-                ".",
-                ".");
+    $a06 = array("Failure, mutation results in a cosmetic change only (see manifestation).",
+                "The mutant is able to see infrared heat sources up to 10’ distant.",
+                "The mutant is able to see infrared heat sources up to 20’ distant.",
+                "The mutant is able to see infrared heat sources up to 40’ distant.",
+                "The mutant is able to see infrared heat sources up to 60’ distant, including residual heat signatures up to 10 minutes old.",
+                "The mutant is able to see infrared heat sources up to 100’ distant, including residual heat signatures and cold spots up to 30 minutes old.");
+                
+
+    $a07 = array("The mutant has 2 extra arms and gains a d16 additional action die for melee attacks only.",
+            "The mutant has 2 extra legs and gains an additional 20’ to movement.",
+            "The mutant has 2 extra arms and gains a d20 additional action die for melee attacks only.",
+            "The mutant has 2 extra arms and gains a d20 additional action die for melee attacks only.",
+            "The mutant has 2 extra arms and gains a d20 additional action die for melee attacks only; mutant also has 2 extra legs and gains + 30’ to movement.",
+            "The mutant has 4 extra arms and gains a d20 additional action die for melee attacks only; also has 4 extra legs and gains + 40’ to movement.");
+            
+        $a08 = array("The mutant possesses antennae that allow the mutant to sense movement in a 360 degree arc; mutant cannot be surprised by moving creatures or objects.",
+            "A long prehensile tail that acts as an extra arm; mutant gains an additional d16 action die for melee and missile attacks only*; +1 Agility.",
+            "The mutant possesses gills and may breathe underwater.",
+            "The mutant possesses wings; mutant gains 30’ flying movement.",
+            "The mutant possesses wings; mutant gains 30’ flying movement.",
+            "The mutant possesses gills and finned arms, legs, and back; mutant may breathe underwater and gains 30’ swimming movement.");
+
+        $a09 = array("Failure, mutation results in cosmetic change only; mutant can contort arms and legs in a minimal fashion.",
+            "The mutant is able to extend arms 10’ and may engage in melee at that range.",
+            "The mutant is able to extend arms and legs 15’ and may engage in melee at that range; gains additional 15’ to movement.",
+            "The mutant is able to extend arms and legs 20’ and may engage in melee at that range; gains additional 20’ to movement; gains -1 to blunt force damage.",
+            "The mutant is able to extend arms and legs 30’ and may engage in melee at that range; gains additional 30’ to movement; gains -1d3 to blunt force damage.",
+            "The mutant is able to extend entire body 40’ and may engage in melee at that range; gains additional 40’ to movement; gains -1d6 to any blunt force dmg.");
+
+            $a10 = array("Failure, mutation results in cosmetic change only; mutant is only slightly shorter than average for his genotype and species.",
+            "The mutant is 1’ shorter than average members of his genotype and species; AC increases by +1.",
+            "The mutant is 2’ shorter than average members of his genotype and species; AC increases by +2, normal mv speed is reduced by 5’/round.",
+            "The mutant is 2’ shorter than average members of his genotype and species; AC increases by +2, normal mv speed is reduced by 5’/round.",
+            "The mutant is 3’ shorter than average members of his genotype and species; AC increases by +3, normal move speed reduced by 10’/round.",
+            "The mutant is 1/3 the height of average members of his genotype and species; AC increases by +4, normal movement speed reduced by 15’.");
+            
+        $a11 = array("Failure, mutation results in cosmetic change only; quills or spines are non-functional.",
+            "The mutant’s AC +1; mutant may fire quills/spines for 1d4 damage against a single target.",
+            "The mutant’s AC +2; mutant may fire quills/spines for 1d6 damage against a single target.",
+            "The mutant’s AC +3; mutant may fire quills/spines for 2d6 damage against a single target, or for 1d6 each against two adjacent targets.",
+            "The mutant’s AC +3; mutant may fire quills/spines for 3d6 damage against a single target, or for 1d6 each against three adjacent targets.",
+            "The mutant’s AC +5, +2 to Ref saves; mutant may fire quills/spines for 4d6 damage against a single target, or for 1d6 each against 4 adjacent targets.");
+
+        $a12 = array("Failure, mutation results in cosmetic change only; mutant is only slightly taller than average for his genotype and species.",
+            "The mutant is 1’ taller than average members of his genotype and species; mutant gains +1 to Strength and AC -1.",
+            "The mutant is 2’ taller than average members of his genotype and species; mutant gains +2 to Strength, +5’ to movement speed, and AC  -2.",
+            "The mutant is 1’ taller than average members of his genotype and species; mutant gains +1 to Strength and AC -1.",
+            "The mutant is 2’ taller than average members of his genotype and species; mutant gains +2 to Strength, +5’ to movement speed, and AC  -2.",
+            "The mutant is 2’ taller than average members of his genotype and species; mutant gains +2 to Strength, +5’ to movement speed, and AC  -2.");
+
+        $a13 = array("Failure, mutation results in a cosmetic change only (see manifestation).",
+            "The mutant is able to see in the ultraviolet range, up to 10’ distant; mutant has full vision in any outdoor situation, no matter how dark.",
+            "The mutant is able to see in the ultraviolet range, up to 20’ distant; mutant has full vision in any outdoor or underground situation, no matter how dark.",
+            "The mutant is able to see in the ultraviolet range, up to 20’ distant; mutant has full vision in any outdoor or underground situation, no matter how dark.",
+            "The mutant is able to see microwave sources and transmissions up to 40’; mutant’s vision may inflict 2d6 of heat damage to a single target as an action.",
+            "The mutant is able to see infrared heat sources up to 100’ distant, including residual heat signatures and cold spots up to 30 minutes old.");
+            
+        $a14 = array("Failure, mutation results in cosmetic change only; non-functional wings.",
+            "The mutant’s wings are capable of level gliding for distances up to 40’/round, or 1/2 speed carrying up to 50 lbs.",
+            "The mutant’s wings are capable of powered flight for distances up to 50’/round, or 1/2 speed carrying up to 100 lbs.",
+            "The mutant’s wings are capable of powered flight for distances up to 60’/round, or 1/2 speed carrying up to 150 lbs.",
+            "The mutant’s wings are capable of powered flight for distances up to 70’/round, or 1/2 speed carrying up to 200 lbs. or full str capacity, whichever is greater.",
+            "The mutant’s wings are capable of powered flight for distances up to 80’/round, or 1/2 speed carrying up to full strength capacity.");
 
 
-    $array1= array($a00, $a01, $a02, $a03, $a04, $a05, $a06, $a07, $a08, $a09, $a10, $a11, $a12, $a13, $a14, $a15;
+    $array1= array($a00, $a01, $a02, $a03, $a04, $a05, $a06, $a07, $a08, $a09, $a10, $a11, $a12, $a13, $a14);
     
     return $array1[$input];
     
-}*/
+}
 
 
-function getPhyicalMutationEffect($input)
+function getPhyicalMutationEffect($input, $dieRoll)
 {
-    if($input <= 10)
-    {
-        $effect = "A mutation check roll each time the active mutation is used.";
-    }
-    else
-    {
-        $select = $input - 11;
-        $dieRoll = rand(0, 5);
+    $select = ($input - 11);
 
-    }
+    $effect = physicalMutationActiveEffect($select)[$dieRoll];
+
+    return $effect;
 }
 
 
