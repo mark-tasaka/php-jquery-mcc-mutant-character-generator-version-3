@@ -4,6 +4,10 @@ Designed with PHP and jQuery, the Mutant Crawl Classics Mutant Character Generat
 
 --------------------------
 
+Update 1.07: 2021-01-26
+
+Updated files mccMutant.php, mutant.css, classDetails.php, mentalMutations.php and physicalMutations.php.  mutantStatAdjustment.php file added. 
+
 Update 1.06: 2021-01-25
 
 New file (mentalMutations.php) added.  Updates to mccMutant.php, physicalMutations.php, abilityScoreGen.php and mutant.css.
