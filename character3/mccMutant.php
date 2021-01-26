@@ -45,6 +45,8 @@
     include 'php/zeroLevelMutantAppearance.php';
     include 'php/physicalMutations.php';
     include 'php/mentalMutations.php';
+    include 'php/defectsMutation.php';
+    include 'php/mutantationStatAdjustment.php';
     
 
         if(isset($_POST["theCharacterName"]))
@@ -232,6 +234,29 @@
 
                 $mutationEffect = getPhyicalMutationEffect($mutationNumber, $dieRoll);
 
+                $mutantAdjustmentArray = getPhyicalMutationAdjustments($mutationNumber, $dieRoll);
+
+                //Mutation/Defect Adjustments
+                //0-4
+                $mutantStrAdj += $mutantAdjustmentArray[0];
+                $mutantAgiAdj += $mutantAdjustmentArray[1];
+                $mutantStaAdj += $mutantAdjustmentArray[2];
+                $mutantPerAdj += $mutantAdjustmentArray[3];
+                $mutantIntAdj += $mutantAdjustmentArray[4];
+                //5 - 7
+                $mutantACAdj += $mutantAdjustmentArray[5];
+                $mutantInitAdj += $mutantAdjustmentArray[6];
+                $mutantActionDieAdj += $mutantAdjustmentArray[7];
+                //8-9
+                $mutantMeleeAdj += $mutantAdjustmentArray[8];
+                $mutantMissileAdj += $mutantAdjustmentArray[9];
+                //10-12
+                $mutantRefAdj += $mutantAdjustmentArray[10];
+                $mutantFortAdj += $mutantAdjustmentArray[11];
+                $mutantWillAdj += $mutantAdjustmentArray[12];
+                //13
+                $mutantSpeedAdj += $mutantAdjustmentArray[13];
+
             }
 
             $mutation = 'Mutation: ' . $mutationName . ' (' . $mutationType . ')<br/><br/>Manifestation: ' . $mutationManifest  . '<br/><br/>Effect: ' . $mutationEffect;
@@ -239,6 +264,43 @@
             array_push($characterPhysicalMutations, $mutation);
         }
 
+
+        $actionDiceBase = actionDiceCode($level);
+
+        $actionDiceBase += $mutantActionDieAdj;
+
+        $actionDice = convertActionDice($actionDiceBase);
+
+        $eMutantStrAdj = getStrMessage($mutantStrAdj);
+        $eMutantAgiAdj = getAgiMessage($mutantAgiAdj);
+        $eMutantStaAdj = getStrMessage($mutantStaAdj);
+        $eMutantPerAdj = getStrMessage($mutantPerAdj);
+        $eMutantIntAdj = getStrMessage($mutantIntAdj);
+        
+        $eMutantACAdj = getACMessage($mutantACAdj);
+        $eMutantInitAdj = getInitMessage($mutantInitAdj);
+        $eMutantActionDiceAdj = getActionDiceMessage($mutantActionDieAdj);
+        
+        $eMutantMeleeAdj = getMeleeMessage($mutantMeleeAdj);
+        $eMutantMissileAdj = getMissileMessage($mutantMissileAdj);
+        
+        $eMutantRefAdj = getRefMessage($mutantRefAdj);
+        $eMutantFortAdj = getFortMessage($mutantFortAdj);
+        $eMutantWillAdj = getWillMessage($mutantWillAdj);
+        
+        $eMutantSpeedAdj = getSpeedMessage($mutantSpeedAdj);
+
+        $messageAdjArray = array($eMutantStrAdj, $eMutantAgiAdj, $eMutantStaAdj, $eMutantPerAdj, $eMutantIntAdj, $eMutantACAdj, $eMutantInitAdj, $eMutantActionDiceAdj, $eMutantMeleeAdj, $eMutantMissileAdj, $eMutantRefAdj, $eMutantFortAdj, $eMutantWillAdj, $eMutantSpeedAdj);
+
+        $messageAdjArray2 = array();
+
+        for($m = 0; $m < count($messageAdjArray); ++$m)
+        {
+            if($messageAdjArray[$m] != "")
+            {
+                array_push($messageAdjArray2, $messageAdjArray[$m]);
+            }
+        }
 
 
         if(isset($_POST['theOptimizeAbilityScore']) && $_POST['theOptimizeAbilityScore'] == 1) 
@@ -350,10 +412,6 @@
        $willBase = savingThrowWill($level);
 
        $criticalDie = criticalDie($level);
-
-
-       $actionDice = actionDice($level);
-
 
        $title = title($level);
 
@@ -739,6 +797,29 @@
            ?>  
         </span>
         
+
+        
+        <span id="mutationDefectAdjust">
+        <?php
+
+            for($n = 0; $n < count($messageAdjArray2); ++$n)
+            {
+                if($n == 0)
+                {
+                    echo $messageAdjArray2[$n];
+                }
+                else if($n == (count($messageAdjArray2)-1) )
+                {
+                    echo ', ' . $messageAdjArray2[$n] . '.';
+                }
+                else
+                {
+                    echo ', ' . $messageAdjArray2[$n];
+                }
+            }
+
+           ?>  
+        </span>
        
        <span id="weaponsList">
            <?php

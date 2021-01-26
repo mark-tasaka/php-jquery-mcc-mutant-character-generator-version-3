@@ -88,34 +88,117 @@ function savingThrowWill($level)
 
 
 
-function actionDice($level)
+function actionDiceCode($level)
 {
-    $actionDice = "";
+    $actionDice = 0;
 
     if($level <= 4)
     {
-        $actionDice = "1d20";
+        $actionDice = 1;
     }
 
     if($level == 5)
     {
-        $actionDice = "1d20+1d14";
+        $actionDice = 101;
     }
 
     if($level == 6)
     {
-        $actionDice = "1d20+1d16";
+        $actionDice = 11;
     }
 
     if($level >= 7)
     {
-        $actionDice = "1d20 (x2)";
+        $actionDice = 2;
     }
 
 
     return $actionDice;
 }
 
+function convertActionDice($input)
+{
+    $die1 = "";
+    $die2 = "";
+    $die3 = "";
+
+    if($input > 100 && $input < 200)
+    {
+      $die3 = "+1d14";
+      $input -= 100;
+    }
+    else if($input > 200 && $input < 300)
+    {
+      $die3 = "+1d14(x2)";
+      $input -= 200;
+    }
+    else if($input > 300 && $input < 400)
+    {
+      $die3 = "+1d14(x3)";
+      $input -= 300;
+    }
+    else if($input > 400 && $input < 500)
+    {
+      $die3 = "+1d14(x4)";
+      $input -= 400;
+    }
+    else
+    {
+      $die3 = "";
+    }
+
+
+    if($input > 10 && $input < 20)
+    {
+      $die2 = "+1d16";
+      $input -= 10;
+    }
+    else if($input > 20 && $input < 30)
+    {
+      $die2 = "+1d16(x2)";
+      $input -= 20;
+    }
+    else if($input > 30 && $input < 40)
+    {
+      $die2 = "+1d16(x3)";
+      $input -= 30;
+    }
+    else if($input > 40 && $input < 50)
+    {
+      $die2 = "+1d16(x4)";
+      $input -= 40;
+    }
+    else
+    {
+      $die2 = "";
+    }
+
+    if($input == 1)
+    {
+      $die1 = "1d20";
+    }
+    else if($input == 2)
+    {
+      $die1 = "1d20(x2)";
+    }
+    else if($input == 3)
+    {
+      $die1 = "1d20(x3)";
+    }
+    else if($input == 4)
+    {
+      $die1 = "1d20(x4)";
+    }
+    else
+    {
+      $die1 = "";
+    }
+
+    $actionDice = $die1 . $die2 . $die3;
+
+    return $actionDice;
+
+}
 
 
 function criticalDie($level)
