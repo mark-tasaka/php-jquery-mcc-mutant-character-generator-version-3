@@ -611,6 +611,17 @@ body{
 	font-size: 0.6em;
 }
 
+
+#characterMentalMutations
+{
+    position: absolute;
+    top: 1360px;
+    left: 542px;
+    width: 330px;
+	font-size: 0.6em;
+}
+
+
 #mutationDefectAdjust
 {
     position: absolute;
@@ -618,4 +629,12 @@ body{
     left: 120px;
     width: 330px;
 	font-size: 0.6em;
+}
+
+#characterDefectMutations{
+        position: absolute;
+        top: 2250px;
+        left: 535px;
+        width: 380px;
+        font-size: 0.55em;
 }

@@ -27,7 +27,7 @@ function getMentalMutationType($input)
 
 function mentalMutationManifestation($input)
 {
-    $a00 = array"A dense ice fog rolls off the mutant’s body.",
+    $a00 = array("A dense ice fog rolls off the mutant’s body.",
     "The mutant’s skin is icy blue and eyes are a cold, glazed white.",
     "The mutant’s body becomes temporarily encased in layer of snow.",
     "The mutant’s body temporarily becomes glassy, semi-transparent, and extremely cold to the touch.");
@@ -62,100 +62,100 @@ function mentalMutationManifestation($input)
     "The mutant’s forehead appears to ripple in concentric circles.",
     "The mutant appears to be is surrounded by a rotating miasma of polychromatic chaos.");
 
-    $a07 = array("",
-                "",
-                "",
-                "");
+    $a07 = array("The mutant’s appearance momentarily shimmers and sparkles.",
+    "A circular field of mirroring energy appears in front of the mutant.",
+    "The mutant’s body visibly distorts, bowing slightly before rebounding.",
+    "The mutant’s body momentarily becomes a silhouetted doorway into another dimension.");
                     
-    $a08 = array("",
-                "",
-                "",
-                "");
+    $a08 = array("The air ripples between the mutant and target object whenever this mutation is used.",
+    "The mutant’s body is surrounded by visible magnetic lines of force when mutation is used.",
+    "The mutant’s complexion darkens noticeably as the ferrous materials in his or his bloodstream align.",
+    "The mutant’s body temporarily becomes metallic and chilled to the touch.");
 
-    $a09 = array("",
-                "",
-                "",
-                "");
+    $a09 = array("The mutant’s head is bald, and the mutant has arched eyebrows.",
+    "The mutant’s eyes appear to be momentarily lit as though by a soft spotlight, even in the dark.",
+    "The mutant’s merest glance causes involuntary flinching in others.",
+    "The mutant’s skull and other head tissues become momentarily transparent, revealing his or her brain.");
 
-    $a10 = array("",
-                "",
-                "",
-                "");
+    $a10 = array("A narrow beam of white light shoots directly from the mutant’s forehead.",
+    "A torch of jagged white energy flares from the mutant’s head.",
+    "Concentric rings of white light radiate from the heads of the mutant and all of his or her targets.",
+    "A piercing white noise whine emanates from the bones in the mutant’s skull.");
 
-    $a11 = array("The mutant’s back and abdomen are encased in a turtle-like shell.",
-                      "The mutant’s body is covered by a chitinous exoskeletal.",
-                      "The mutant’s skin is like thick, spiked dinosaur hide.",
-                      "The mutant’s body is covered in hexagonal granite-like epidermal cells.");
+    $a11 = array("The mutant generates a mental shield that appears as a translucent blue-green sphere around the mutant’s head.",
+    "The mutant generates a mental shield that appears as an illusory riveted metal band around the mutant’s forehead.",
+    "The mutant generates a mental shield that appears as an illusory riveted metal band around the mutant’s forehead.",
+    "The mutant’s mental shield manifests as numerous small, glowing crystals that orbit the mutant’s head.");
 
-    $a12 = array("The mutant’s claws are composed of a razor sharp chitinous or bone-like material.",
-                      "The mutant’s claws are comprised of organic duralloy.",
-                      "The mutant’s Claws are molecular-edge carbon nano-structures.",
-                      "The mutant’s claws are projected as edged plasma fields.");
+    $a12 = array("The mutant’s appearance momentarily glimmers and gleams.",
+    "An octagonal field of reflective energy appears in front of the mutant.",
+    "The air around the mutant’s head appears to distort, warping slightly before rebounding.",
+    "The mutant’s eyes momentarily become blackened twin orbs.");
 
-    $a13 = array("The mutant’s metabolism runs at a superior rate and the rail-thin mutant must consume twice as many calories as normal.",
-                      "The mutant’s genes carry fragments of mongoose DNA, causing increased reaction speed and giving the mutant a rat-like face.",
-                      "The mutant’s nerve conduction velocity is accelerated to that of a radioactive spider.",
-                      "The mutant’s brain is able to scan alternate future timelines in a limited fashion, and is thus better able to calculate body speed, position, and actions.");
+    $a13 = array("The mutant’s hands project a bright yellow ray of light that sizzles when it hits target.",
+    "The mutant’s eye’s send out twin beams of searing red-orange energy that zigzags unerringly towards targets.",
+    "The mutant’s forefinger casts forth a pulsating red beam that whines rhythmically.",
+    "The mutant’s body momentarily flashes as a bright green silhouette revealing a photo-reversed black skeleton inside.");
 
-    $a14 = array("The mutant’s skin appears as dull lead.",
-                      "The mutant’s skin is the color of oxidized copper.",
-                      "The mutant’s skin resembles chrome plating.",
-                      "The mutant’s skin flashes metallic red briefly each time the mutant makes a Fortitude saving throw.");
+    $a14 = array("The mutant’s hands glow with a bluish white light.",
+    "The mutant’s hands radiate bluewhite rings of concentric energy.",
+    "The mutant’s hands cast forth a pulsating blue-white light that bathes target creature or object in an angelic glow.",
+    "The mutant’s entire body is bathed in a cascading shower of blue-white sparkles which gradually flow over to target creature or object.");
 
-    $a15 = array("The mutant’s body appears extremely over-muscled.",
-                      "The mutant is abnormally short and squat, as though adapted for a higher gravity.",
-                      "The mutant’s body glows dimly and converts nearby matter directly into kinetic energy whenever extreme strength is exercised.",
-                      "The mutant’s body is composed of superdense ebony-colored elements and weighs 3x normal.");
+    $a15 = array("The mutant’s body begins to shimmer with ripples of heated air.",
+    "The mutant’s body starts to glow, beginning with a dull red and eventually becoming white hot.",
+    "The mutant’s body hums as he begins to broadcast microwave radiation.",
+    "The mutant’s hands catch fire as they become sheathed in glowing plasma.");
 
-    $a16 = array("The mutant’s movements, even when resting, appear jittery and shaky.",
-                      "The mutant is unable to remain still or at rest, even when sleeping.",
-                      "The mutant operates in a slightly different time frame, and does not appear to move at all, but strobes instantly from one position to the next.",
-                      "The mutant’s movements cannot be followed by normal vision, as he is visible only as a blurred streak when acting at an accelerated pace.");
+    $a16 = array("Segmented lines of translucent force are visible between the mutant’s head and target object.",
+    "The mutant’s head is surrounded by a translucent white sphere of energy when mutation is used.",
+    "The mutant’s eyes become all-white when this mutation is used.",
+    "Huge translucent hands manifest around target whenever this mutation is used.");
 
-    $a17 = array( "The mutant’s eyes reflect red light in the dark.",
-                      "The mutant’s entire field of vision can be dimly seen in the dark as twin projected light beams.",
-                      "The mutant’s eyes are entirely comprised of reddish pupils.",
-                      "The mutant has a third eye placed center in the mutant’s forehead which actively broadcasts infrared light.");
+    $a17 = array("The irises of the mutant’s eyes vanish.",
+    "The mutant’s head is encircled with a subtle white glow.",
+    "The mutant’s eyebrows are arched.",
+    "A shrill sonic hum fills the air.");
 
-    $a18 = array("The extra body parts are a different skin color (see Table 1-6, result 1-5).",
-                      "The extra body parts are scaly or furry.",
-                      "The extra body parts are skeletal or chitinous.",
-                      "The extra body parts are metallic, and appear artificial.");
+    $a18 = array("The ground immediately around the mutant explodes in a harmless but loud display of smoke and pyrotechnics.",
+    "The teleported persons or objects slowly dissolve into a swirling cloud of golden twinkling sparkles which fade away accompanied by...",
+    "The surface of the teleported persons or objects begins to crawl with tiny forked arcs of electricity as they vanish and reappear elsewhere",
+    "A ring of violaceous energy grows to surround one end of the teleported persons or objects, and as it passes over them to the other end...");
 
-    $a19 = array("The new body parts are scaly.",
-                      "The new body parts are furred.",
-                      "The new body parts are skeletal or chitinous.",
-                      "The new body parts are metallic, and appear artificial.");
+    $a19 = array("The mutant’s body twinkles and sparkles subtly when attacked.",
+    "All objects, including clothes and possessions, are pushed away from the mutant’s body by 1/4 inch.",
+    "All objects, including clothes and possessions, are pushed away from the mutant’s body by 1/4 inch.",
+    "For a microsecond the mutant’s body appears to shift into a sideways dimension.");
 
-    $a20 = array("The mutant’s body is supple and rubbery.",
-                      "The mutant’s body and appendages are coiled and extensible.",
-                      "The mutant’s body is gelatinous in nature with pseudopodic arms and legs.",
-                      "The mutant’s body is comprised of an unknown quantum state of matter, able to add and subtract mass instantaneously.");
+    $a20 = array("Transparent red bands of ribboned energy rotate around the mutant’s head in elliptical patterns.",
+    "The mutant’s head appears to enveloped in a jet of cool red flames, obscuring all of his facial features.",
+    "The mutant’s head appears to transform into a red ruby-like material.",
+    "An ethereal red armet appears around the mutant’s head.");
 
-    $a21 = array("The mutant’s body is a scaled-down version of other members of his genotype.",
-                      "The mutant’s body is shorter but just as wide as other members of his genotype.",
-                      "The mutant’s body is shorter than other members of his genotype, but his lower legs and feet are extra-large.",
-                      "The mutant’s upper body is normally proportioned, but he has no legs with feet attached directly to the torso.");
+    $a21 = array( "The mutant’s face appears to blur horizontally as his eyes glow with a deep crimson light.",
+    "The mutant becomes semi-transparent as his form appears to revolve vertically around a central axis (does not effect the true...",
+    "The mutant becomes semi-transparent as his form appears to revolve vertically around a central axis (does not effect the true...",
+    "Whenever the mutant moves while this mutation is activated, his physical form appears to strobe into three identical forms...");
 
-    $a22 = array("The mutant’s back and abdomen are covered in stiff quills.",
-                      "The mutant’s forearms are covered with bony spines.",
-                      "The mutant’s head has long sharp metallic quills, helmets and other head gear may not be worn.",
-                      "The mutant’s skin contains thousands of sub-dermal pores containing short, chitinous bone spikes.");
+    $a22 = array("Target color-shifts towards the red spectrum.",
+    "Target is surrounded by a shifting waves of banded color.",
+    "Target becomes a black silhouette of no-light.",
+    "Target’s form blurs but freezes in place.");
 
-    $a23 = array("The mutant’s body is a scaled-up version of other members of his genotype.",
-                      "The mutant’s body is taller but much slimmer than other members of his genotype.",
-                      "The mutant’s body is taller than other members of his genotype, but his lower legs and feet are extra-wide.",
-                      "The mutant’s upper body is normally proportioned, but he his legs are much longer than other members of his genotype or species.");
+    $a23 = array("The mutant skin ripples each time he is struck.",
+    "The mutant’s complexion deepens and he appears healthier.",
+    "The air around the mutant’s body shimmers when attacked.",
+    "The mutant is suffused in a warm pink glow.");
 
-    $a24 = array("The mutant’s eyes glow ultraviolet.",
-                      "The mutant’s entire field of vision acts as a black light lamp, these purple beams are visible under dim lighting conditions.",
-                      "The mutant’s eyes are entirely composed of dark purple pupils.",
-                      "The mutant has a single cyclopean eye that is all-white with no visible iris or pupil.");
+    $a24 = array("The mutant’s second brain is located in a large and pronounced bump in the forehead of the skull.",
+    "The mutant’s second brain is located at the base of the spine or equivalent body form.",
+    "The mutant’s second brain is located in a second head.",
+    "The mutant’s second brain is located in a small malformed twin that is embedded in the mutant’s chest.");
 
-    $a25 = array("The mutant has wings of a type closely related to the mutant’s genotype (furred for mammals, feathered for avians, scaly for reptilians, etc.).",
-                      "The mutant has wings of an unrelated type for the mutant’s genotype (insectoid or feathered wings on a mammal, and so on).",
-                      "The mutant has wings comprised of a chrome-like organic metal.",
-                      "The mutant has wings composed of electric-blue projected force fields.");
+    $a25 = array("The mutant’s head is overlarge with an extended, tall forehead.",
+    "The mutant’s head is bald and body is hairless.",
+    "The mutant’s body beneath the neck is notably atrophied.",
+    "The mutant appears to be a far-future highly-evolved version, with slender body, slight facial features, and overlarge head and eyes.");
 
 
     $array1= array($a00, $a01, $a02, $a03, $a04, $a05, $a06, $a07, $a08, $a09, $a10, $a11, $a12, $a13, $a14, $a15, $a16, $a17, $a18, $a19, $a20, $a21, $a22, $a23, $a24, $a25);
@@ -175,9 +175,53 @@ function getMentalMutationManifestation($input)
 
 
 
+
+function mentalMutationActiveEffect($input)
+{
+    $a00 = array("Failure, mutation results in cosmetic change only; mutant appears to roll with the punches exceptionally well.",
+                "The mutant absorbs kinetic energy; takes only 1/2 damage from normal melee and missile attacks",
+                "The mutant absorbs kinetic energy; takes only 1/2 damage from normal melee and missile attacks",
+                "The mutant absorbs kinetic energy; takes only 1/2 damage from normal melee and missile attacks and gains 1d3 hp (up to hp max) from each attack.",
+                "The mutant absorbs kinetic energy; takes only 1/2 damage from normal melee and missile attacks and gains 1d6 hp (up to hp max) from each attack.",
+                "The mutant absorbs kinetic energy; takes 1/2 damage from normal melee and missile attacks and gains 1 HD in hp (up to hp max) from each attack.");
+
+    $a01 = array("Failure, mutation results in cosmetic change only; mutant has non-functional second brain.",
+                "The mutant’s Intelligence score increases by +2.",
+                "The mutant’s Intelligence score increases by +3; gains additional +1 to Willpower saves.",
+                "The mutant’s Intelligence score increases by +2.",
+                "The mutant’s Intelligence score increases by +3; gains additional +1 to Willpower saves.",
+                "The mutant’s Intelligence score increases by +4; gains additional +2 to Willpower saves.");
+
+    $a02 = array("Failure, mutation results in a cosmetic change only: mutant appears to be a big-headed know-it-all.",
+                "The mutant’s Intelligence score is increased by +1.",
+                "The mutant’s Intelligence score is increased by +2.",
+                "The mutant’s Intelligence score is increased by +3.",
+                "The mutant’s Intelligence score is increased by +4; Artifact checks succeed automatically up to tech level 2.",
+                "The mutant’s Intelligence score is increased by +5; Artifact checks succeed automatically up to tech level 3.");
+
+
+
+    $array1= array($a00, $a01, $a02);
+    
+    return $array1[$input];
+    
+}
+
+
+function getMentalMutationEffect($input, $dieRoll)
+{
+    $select = ($input - 23);
+
+    $effect = mentalMutationActiveEffect($select)[$dieRoll];
+
+    return $effect;
+}
+
+
+
 function getMentalMutationAdjustments($input, $dieRoll)
 {
-    $select = ($input - 22);
+    $select = ($input - 23);
     //$adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
     //$adjustmentArray = array();
 
@@ -233,23 +277,23 @@ function getMentalMutationAdjustments($input, $dieRoll)
                 break;
 
             case 1:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 break;
 
             case 2:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0);
                 break;
 
             case 3:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 break;
 
             case 4:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0);
                 break;
 
             case 5:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 0);
                 break;
             
             default:
@@ -271,23 +315,23 @@ function getMentalMutationAdjustments($input, $dieRoll)
                 break;
 
             case 1:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 break;
 
             case 2:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 break;
 
             case 3:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 break;
 
             case 4:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 break;
 
             case 5:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 break;
             
             default:

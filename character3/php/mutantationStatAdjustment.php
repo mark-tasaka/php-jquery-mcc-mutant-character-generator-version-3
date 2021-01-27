@@ -130,6 +130,13 @@ function getActionDiceMessage($input)
     $die2 = "";
     $die3 = "";
 
+    $addActionDieWord = false;
+
+    if($input > 0)
+    {
+        $addActionDieWord = true;
+    }
+
     if($input > 100 && $input < 200)
     {
       $die3 = "+1d14";
@@ -202,7 +209,14 @@ function getActionDiceMessage($input)
       $die1 = "";
     }
 
-    $actionDice = $die1 . $die2 . $die3;
+    $actionDieMessage = "";
+    
+    if($addActionDieWord == true)
+    {
+        $actionDieMessage = "Action Dice: ";
+    }
+
+    $actionDice = $actionDieMessage . $die1 . $die2 . $die3;
 
     return $actionDice;
 }

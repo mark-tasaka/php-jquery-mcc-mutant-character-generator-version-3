@@ -179,20 +179,60 @@
 
         shuffle($physicalMutationArray);
 
+        
+        $mentalMutationArray = array();
+
+        for($m = 0; $m < 26; ++$m)
+        {
+            array_push($mentalMutationArray, $m);
+        }
+
+        
+        $defectMutationArray = array();
+
+        for($m = 0; $m < 25; ++$m)
+        {
+            array_push($defectMutationArray, $m);
+        }
+
+        shuffle($mentalMutationArray);
+
         if(isset($_POST["thePhysicalMutuation"]))
         {
             $physicalMutationString = $_POST["thePhysicalMutuation"];
             //casting not necessary with php (it's good practice)
             $physicalMutationTotal = (int)$physicalMutationString;
         }
+        
+        if(isset($_POST["theMentalMutuation"]))
+        {
+            $mentalMutationString = $_POST["theMentalMutuation"];
+            //casting not necessary with php (it's good practice)
+            $mentalMutationTotal = (int)$mentalMutationString;
+        }
+
+         
+        if(isset($_POST["theDefects"]))
+        {
+            $defectMutationString = $_POST["theDefects"];
+            //casting not necessary with php (it's good practice)
+            $defectMutationTotal = (int)$defectMutationString;
+        }
 
         if(isset($_POST['theRandomMutuations']) && $_POST['theRandomMutuations'] == 1) 
         {
             $dieRollPhysicalMutations = rand(1, 3);
             $physicalMutationTotal = $dieRollPhysicalMutations;
+
+            $dieRollMentalMutations = rand(1, 2);
+            $mentalMutationTotal = $dieRollMentalMutations;
+
+            $defectMutationTotal = 0;
         } 
 
         $characterPhysicalMutations = array();
+        $characterMentalMutations = array();
+        $characterDefectMutations = array();
 
         //Mutation/Defect Adjustments
         //0-4
@@ -263,6 +303,106 @@
 
             array_push($characterPhysicalMutations, $mutation);
         }
+
+        
+        for($k = 0; $k < $mentalMutationTotal; ++$k)
+        {
+            $mutationNumber = $mentalMutationArray[$k];
+
+            $mutationName = getMentalMutationName($mutationNumber);
+            $mutationType = getMentalMutationType($mutationNumber);
+            $mutationManifest = getMentalMutationManifestation($mutationNumber);
+
+            if($mutationNumber <= 22)
+            {
+                $mutationEffect = "A mutation check roll each time the active mutation is used.";
+            }
+            else
+            {
+                $dieRoll = rand(0, 5);
+
+                $mutationEffect = getMentalMutationEffect($mutationNumber, $dieRoll);
+
+                $mutantAdjustmentArray = getMentalMutationAdjustments($mutationNumber, $dieRoll);
+
+                //Mutation/Defect Adjustments
+                //0-4
+                $mutantStrAdj += $mutantAdjustmentArray[0];
+                $mutantAgiAdj += $mutantAdjustmentArray[1];
+                $mutantStaAdj += $mutantAdjustmentArray[2];
+                $mutantPerAdj += $mutantAdjustmentArray[3];
+                $mutantIntAdj += $mutantAdjustmentArray[4];
+                //5 - 7
+                $mutantACAdj += $mutantAdjustmentArray[5];
+                $mutantInitAdj += $mutantAdjustmentArray[6];
+                $mutantActionDieAdj += $mutantAdjustmentArray[7];
+                //8-9
+                $mutantMeleeAdj += $mutantAdjustmentArray[8];
+                $mutantMissileAdj += $mutantAdjustmentArray[9];
+                //10-12
+                $mutantRefAdj += $mutantAdjustmentArray[10];
+                $mutantFortAdj += $mutantAdjustmentArray[11];
+                $mutantWillAdj += $mutantAdjustmentArray[12];
+                //13
+                $mutantSpeedAdj += $mutantAdjustmentArray[13];
+
+            }
+
+            $mutation = 'Mutation: ' . $mutationName . ' (' . $mutationType . ')<br/><br/>Manifestation: ' . $mutationManifest . '<br/><br/>Effect: ' . $mutationEffect;
+
+            array_push($characterMentalMutations, $mutation);
+        }
+
+                
+        for($k = 0; $k < $defectMutationTotal; ++$k)
+        {
+            $mutationNumber = $defectMutationArray[$k];
+
+            $mutationName = getDefectMutationName($mutationNumber);
+            $mutationType = getDefectlMutationType($mutationNumber);
+
+            if($mutationNumber <= 1)
+            {
+                $mutationEffect = "A mutation check roll each time the active mutation is used.";
+            }
+            else
+            {
+                $dieRoll = rand(0, 4);
+
+                $mutationEffect = getDefectMutationEffect($mutationNumber, $dieRoll);
+
+                $mutantAdjustmentArray = getDefectsAdjustments($mutationNumber, $dieRoll);
+
+                //Mutation/Defect Adjustments
+                //0-4
+                $mutantStrAdj += $mutantAdjustmentArray[0];
+                $mutantAgiAdj += $mutantAdjustmentArray[1];
+                $mutantStaAdj += $mutantAdjustmentArray[2];
+                $mutantPerAdj += $mutantAdjustmentArray[3];
+                $mutantIntAdj += $mutantAdjustmentArray[4];
+                //5 - 7
+                $mutantACAdj += $mutantAdjustmentArray[5];
+                $mutantInitAdj += $mutantAdjustmentArray[6];
+                $mutantActionDieAdj += $mutantAdjustmentArray[7];
+                //8-9
+                $mutantMeleeAdj += $mutantAdjustmentArray[8];
+                $mutantMissileAdj += $mutantAdjustmentArray[9];
+                //10-12
+                $mutantRefAdj += $mutantAdjustmentArray[10];
+                $mutantFortAdj += $mutantAdjustmentArray[11];
+                $mutantWillAdj += $mutantAdjustmentArray[12];
+                //13
+                $mutantSpeedAdj += $mutantAdjustmentArray[13];
+
+            }
+
+            $mutation = 'Defect: ' . $mutationName . ' (' . $mutationType . ') <br/><br/>Effect: ' . $mutationEffect;
+
+
+            array_push($characterDefectMutations, $mutation);
+        }
+
+
 
 
         $actionDiceBase = actionDiceCode($level);
@@ -797,6 +937,30 @@
            ?>  
         </span>
         
+        <span id="characterMentalMutations">
+        <?php
+           
+           foreach($characterMentalMutations as $theMMutations)
+           {
+               echo $theMMutations;
+               echo "<br/>----------------------------------------------------------<br/>";
+           }
+           
+           ?>  
+        </span>
+        
+
+        <span id="characterDefectMutations">
+        <?php
+           
+           foreach($characterDefectMutations as $theMMutations)
+           {
+               echo $theMMutations;
+               echo "<br/>----------------------------------------------------------<br/>";
+           }
+           
+           ?>  
+        </span>
 
         
         <span id="mutationDefectAdjust">
