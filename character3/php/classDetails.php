@@ -87,6 +87,32 @@ function savingThrowWill($level)
 }
 
 
+function attackBonus($level)
+{
+  if($level == 1 || $level == 2)
+  {
+    $attackBonus = 1;
+  }
+  else if($level == 3 || $level == 4)
+  {
+    $attackBonus = 2;
+  }
+  else if($level == 5 || $level == 6)
+  {
+    $attackBonus = 3;
+  }
+  else if($level == 7 || $level == 8)
+  {
+    $attackBonus = 4;
+  }
+  else
+  {
+    $attackBonus = 5;
+  }
+
+  return $attackBonus;
+}
+
 
 function actionDiceCode($level)
 {

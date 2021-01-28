@@ -137,22 +137,22 @@ function getActionDiceMessage($input)
         $addActionDieWord = true;
     }
 
-    if($input > 100 && $input < 200)
+    if($input >= 100 && $input < 200)
     {
       $die3 = "+1d14";
       $input -= 100;
     }
-    else if($input > 200 && $input < 300)
+    else if($input >= 200 && $input < 300)
     {
       $die3 = "+1d14(x2)";
       $input -= 200;
     }
-    else if($input > 300 && $input < 400)
+    else if($input >= 300 && $input < 400)
     {
       $die3 = "+1d14(x3)";
       $input -= 300;
     }
-    else if($input > 400 && $input < 500)
+    else if($input >= 400 && $input < 500)
     {
       $die3 = "+1d14(x4)";
       $input -= 400;
@@ -163,22 +163,22 @@ function getActionDiceMessage($input)
     }
 
 
-    if($input > 10 && $input < 20)
+    if($input >= 10 && $input < 20)
     {
       $die2 = "+1d16";
       $input -= 10;
     }
-    else if($input > 20 && $input < 30)
+    else if($input >= 20 && $input < 30)
     {
       $die2 = "+1d16(x2)";
       $input -= 20;
     }
-    else if($input > 30 && $input < 40)
+    else if($input >= 30 && $input < 40)
     {
       $die2 = "+1d16(x3)";
       $input -= 30;
     }
-    else if($input > 40 && $input < 50)
+    else if($input >= 40 && $input < 50)
     {
       $die2 = "+1d16(x4)";
       $input -= 40;

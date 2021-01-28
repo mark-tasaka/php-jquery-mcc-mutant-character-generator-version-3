@@ -220,15 +220,15 @@ function getDefectsAdjustments($input, $dieRoll)
             10 = ref, 11 = fort, 12 = will,
             13 = speed */
             case 0:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, -3, -3, 0, 0, 0, -10);
                 break;
 
             case 1:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(1, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 break;
 
             case 2:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5);
                 break;
 
             case 3:
@@ -254,7 +254,7 @@ function getDefectsAdjustments($input, $dieRoll)
             10 = ref, 11 = fort, 12 = will,
             13 = speed */
             case 0:
-                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                $adjustmentArray = array(0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 break;
 
             case 1:
@@ -288,6 +288,75 @@ function getDefectsAdjustments($input, $dieRoll)
             10 = ref, 11 = fort, 12 = will,
             13 = speed */
             case 0:
+                $adjustmentArray = array(0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, -2, -3, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 3)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, -5, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 4)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
                 $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 break;
 
@@ -312,6 +381,631 @@ function getDefectsAdjustments($input, $dieRoll)
                 $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         }
 
+    }
+    else if($select == 5)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 6)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, -2, -2, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 7)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, -2, -2, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 8)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, -5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, -7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 9)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 10)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, -2, -2, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 11)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(-2, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, -1, -1, 0, 0, 0, 0);
+                break;
+
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 12)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 13)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 14)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 15)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 16)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, -5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, -3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 17)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 18)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 19)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 20)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 21)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else if($select == 22)
+    {
+        switch($dieRoll)
+        {
+            /*0 = str, 1 = agi, 2 = sta, 3 = per, 4 = int,
+            5 = AC, 6 = init, 7 = action die,
+            8 = melee, 9 = missile,
+            10 = ref, 11 = fort, 12 = will,
+            13 = speed */
+            case 0:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 1:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 2:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 3:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            case 4:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                break;
+
+            
+            default:
+                $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+    }
+    else
+    {
+        $adjustmentArray = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
     }
 
     return $adjustmentArray;

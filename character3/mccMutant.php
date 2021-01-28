@@ -47,6 +47,7 @@
     include 'php/mentalMutations.php';
     include 'php/defectsMutation.php';
     include 'php/mutantationStatAdjustment.php';
+    include 'php/mutationCheckMiniums.php';
     
 
         if(isset($_POST["theCharacterName"]))
@@ -413,9 +414,9 @@
 
         $eMutantStrAdj = getStrMessage($mutantStrAdj);
         $eMutantAgiAdj = getAgiMessage($mutantAgiAdj);
-        $eMutantStaAdj = getStrMessage($mutantStaAdj);
-        $eMutantPerAdj = getStrMessage($mutantPerAdj);
-        $eMutantIntAdj = getStrMessage($mutantIntAdj);
+        $eMutantStaAdj = getStaMessage($mutantStaAdj);
+        $eMutantPerAdj = getPerMessage($mutantPerAdj);
+        $eMutantIntAdj = getIntMessage($mutantIntAdj);
         
         $eMutantACAdj = getACMessage($mutantACAdj);
         $eMutantInitAdj = getInitMessage($mutantInitAdj);
@@ -511,6 +512,21 @@
 
         $strength = $strengthBonusFromArtifact + $strengthBase;
 
+        //Add Mutant/Defect adjustments to ability scores
+        $strength += $mutantStrAdj;
+        $agility += $mutantAgiAdj;
+        $stamina += $mutantStaAdj;
+        $personality += $mutantPerAdj;
+        $intelligence += $mutantIntAdj;
+
+        //Ability score min of 3
+        $strength = abilityScoreMinimum($strength);
+        $agility = abilityScoreMinimum($agility);
+        $stamina = abilityScoreMinimum($stamina);
+        $personality = abilityScoreMinimum($personality);
+        $intelligence = abilityScoreMinimum($intelligence);
+
+
         $strengthMod = getStrengthModifier($strength);
         $agilityMod = getMutantAbilityScoreModifier($agility);
         $staminaMod = getMutantAbilityScoreModifier($stamina);
@@ -543,13 +559,27 @@
             $shieldFumbleDie = getArmour(8)[2];
         } 
 
+        $meleeAttack = attackBonus($level);
+        $meleeAttack += $mutantMeleeAdj;
+        
+        $missileAttack = attackBonus($level);
+        $missileAttack += $mutantMissileAdj;
+        
+
        $totalAcDefense = $armourACBonus + $shieldACBonus + $totalArtifactAC;
 
-       $speed = 30;
+       $speed = 30 + $mutantSpeedAdj;
+
+       $speed = speedCheckMin($speed);
 
        $reflexBase = savingThrowReflex($level);
        $fortBase = savingThrowFort($level);
        $willBase = savingThrowWill($level);
+
+       //add mutation/defect bonus to saving throws
+       $reflexBase += $mutantRefAdj;
+       $fortBase += $mutantFortAdj;
+       $willBase += $mutantWillAdj;
 
        $criticalDie = criticalDie($level);
 
@@ -927,12 +957,13 @@
 
         <span id="characterPhysicalMutations">
         <?php
-           
+
            foreach($characterPhysicalMutations as $thePMutations)
            {
                echo $thePMutations;
                echo "<br/>----------------------------------------------------------<br/>";
            }
+           
            
            ?>  
         </span>
@@ -1087,9 +1118,11 @@
 	    let birthAugur = getLuckySign();
         let maxTechLevel = getMaxTechLevel(intelligence);
         let bonusLanguages = fnAddLanguages(intelligenceMod, birthAugur, luckMod);
-	    let baseAC = getBaseArmourClass(agilityMod) + adjustAC(birthAugur, luckMod);
+        let mutationACAdjustment = <?php echo $mutantACAdj ?>;
+	    let baseAC = getBaseArmourClass(agilityMod) + adjustAC(birthAugur, luckMod) + mutationACAdjustment;
         let mutantHorrorInitPart2 =  <?php echo $mutantHorrorPart2 ?>;
-        let initBase = mutantHorrorInitPart2 + agilityMod + adjustInit(birthAugur, luckMod);
+        let mutantInitAdjust2 = <?php echo $mutantInitAdj ?>;
+        let initBase = mutantHorrorInitPart2 + mutantInitAdjust2 + agilityMod + adjustInit(birthAugur, luckMod);
         let mutantInitBonus2 = addModifierSign(initBase);
 
 		let mutantCharacter = {
@@ -1112,8 +1145,8 @@
             "addLanguages": "Nu-Speak" + bonusLanguages,
             "armourClass": <?php echo $totalAcDefense ?> + baseAC,
             "hp": getHitPoints (level, staminaMod) + hitPointAdjustPerLevel(birthAugur,  luckMod),
-			"melee": strengthMod + <?php echo $level ?> + meleeAdjust(birthAugur, luckMod),
-			"range": agilityMod +  <?php echo $level ?> + rangeAdjust(birthAugur, luckMod),
+			"melee": strengthMod + <?php echo $meleeAttack ?> + meleeAdjust(birthAugur, luckMod),
+			"range": agilityMod +  <?php echo $missileAttack ?> + rangeAdjust(birthAugur, luckMod),
 			"meleeDamage": strengthMod + adjustMeleeDamage(birthAugur, luckMod),
             "rangeDamage": adjustRangeDamage(birthAugur, luckMod),
             "techLevel": maxTechLevel,
