@@ -4,6 +4,19 @@ Designed with PHP and jQuery, the Mutant Crawl Classics Mutant Character Generat
 
 --------------------------
 
+Live version of the Mutant Crawl Classics (MCC) Mutant Character Generator Version 3 is found at:
+
+Artifacts of the Ancient Ones: A Mutant Crawl Classics Fan Site
+
+https://www.oldschooladventures.org/mcc/classes/mutant/
+
+----------------------
+
+Update 1.10: 2021-01-31
+
+MCC Mutant Generator Launch Page has been added.
+
+
 Update 1.09: 2021-01-28
 
 Updates to mccMutant.php, hitPoints.js, defectsMutation.php, classDetails.php and mutantStatAdjustment.php. New file, mutantionCheckMinimums.php, added. 
